@@ -10,6 +10,19 @@ The content of the events has been moved to a file called `events.json`. The for
 
 Create a list within the file when multiple events are needed for the same day.
 
+# Sample output
+
+This is a sample output including the box:
+
+```
+┌──────────────────────────────┐
+│ Mai ünnepek 09/27/2020       │
+│                              │
+│ András teszt névnap          │
+│ Matthew teszt nap            │
+└──────────────────────────────┘
+```
+
 # TODO
 Ideally I want to have the box be generated dynamically when it comes to width. This will require the existing script to be altered. Also allowing the user to add events to the file via command line arguments will help improve user friendliness.
 
