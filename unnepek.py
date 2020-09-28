@@ -4,19 +4,28 @@ import sys
 
 
 # Create events data 
-event_data_string = '{"dates": [{"09/15": ["Test case", "Second event", "Something else", "Another thing"], "09/16": "Should not display"}]}'
-event_json_object = json.loads(event_data_string)
+with open('events.json') as json_file:
+    event_json_object = json.load(json_file)
 
 # Grab today's date in MM/DD format to pull data for that specific date.
 today = datetime.datetime.today()
-today = today.strftime('%m/%d')
+today_formatted = today.strftime('%m/%d')
+today_date = today.strftime("%m/%d/%Y")
 
 # Grab relevant list from JSON object dictionary
 try:
-    events = event_json_object['dates'][0][today]
+    events = event_json_object[today_formatted]
 except KeyError:
     print("No events were found for today.")
     sys.exit()
 
+#longest_string = max(events, key=len)
+#width = 29 - len(longest_string)
+
+print("┌" + "─" * 30 + "┐")
+print("│ " + "Mai ünnepek " + today_date + " " * 7 + "│") 
+print("│" + " " * 30 + "│")
 for event in events:
-    print(event)
+    width = 29 - len(event)
+    print("│ " + event + " " * width + "│")
+print("└" + "─" * 30 + "┘")
