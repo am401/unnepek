@@ -27,6 +27,11 @@ This is a sample output including the box:
 Ideally I want to have the box be generated dynamically when it comes to width. This will require the existing script to be altered. Also allowing the user to add events to the file via command line arguments will help improve user friendliness.
 
 # Changelog
+## [0.2] - 2021-03-15
+### Changed
+- Removed existing loop iterating over JSON file to a function
+### Added
+- Ability to call the next day's events as well
 ## [0.1] - 2020-09-27
 ### Added
 - Box around the output text including the current date that events are occurring on
